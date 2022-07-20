@@ -1,0 +1,571 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebooks</title>
+    <style>
+        #up_content{
+            border: 1px solid green;
+            text-align: center;
+            padding: 30px;
+            background-color: #0071c5;
+            color: white;
+        }
+        #up_content p{
+            margin: auto;
+            width: 60%;
+            font-size: 20px;
+        }
+        .sTag{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .container {
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 100px;
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            /* padding-top: 80px; */
+            /* border: 1px solid red; */
+        }
+        .container > div {
+            /* height: 440px; */
+            width: 100%;
+            text-align: center;
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+            border-radius: 10px;
+            line-height: 10px;
+            margin: auto;
+            /* padding: 20px; */
+            /* border: 1px solid cyan; */
+        }
+        .container > div > img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .container > div >h3{
+            line-height: 20px;
+            padding: 10px;
+        }
+        .container > div >h4{
+            color: gray;
+            margin-left: 0px;
+
+        }
+        .container > div >p{
+            color: #0071c5;
+        }
+        #footer_main{
+            display: flex;
+            margin-top: auto;
+            background-color: #111317;
+            color: white;
+            flex-flow: row wrap;
+            padding-bottom: 15px;
+            padding-top: 40px;
+            
+        }
+        #footer{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            margin: auto;
+            gap: 185px;
+        }
+        ul{
+            line-height: 25px;
+            list-style: none;
+            /* list-style; */
+        }
+        .col1{
+            max-width: 160px;
+            text-align: center;
+        }
+
+        .head {
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .list1{
+            padding: inherit;
+            font-size: 14px;
+            color: gray;
+        }
+        li:hover{
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        #page{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            padding: 20px;
+        }
+        #page>div>button{
+            padding: 15px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+        #page>div>button:hover{
+            background-color: #0071c5;
+            color: whitesmoke;
+        }
+        #page>div>button:first-child{
+            background-color: #0071c5;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        #end{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            gap: 20px;
+            text-align: center;
+            background-color: #000;
+            color: whitesmoke;
+        }
+        #end>p{
+            margin-top: 20px;
+            color: gray;
+        }
+        #nav{
+            width: 100%;
+            background-color: #111317;
+            color: whitesmoke;
+        }
+
+        #nav>div{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-around; */
+        }
+        #nav>div>h3,h4{
+            margin-left: 30px;
+        }
+        #nav>div>h4{
+            color: grey;
+            cursor: pointer;
+        }
+        #nav>div>h4:nth-child(5){
+            color: whitesmoke;
+        }
+        #nav>div>button{
+            background-color: #111317;
+            color: whitesmoke;
+            border: solid whitesmoke;
+            padding: 10px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+
+
+        @media all and (min-width: 481px) and (max-width: 868px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        #footer{
+            gap: 50px;
+        }
+      }
+
+      @media all and (min-width: 320px) and (max-width: 480px) {
+        .container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        #footer{
+            gap: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="nav">
+    </div>
+    <div id="up_content">
+        <h1>Ebooks</h1>
+        <p>Here you can find  a range of downloadable guides in PDF format that can help you broaden your knowledge and improve your skills.</p>
+    </div>
+    <div id="content">
+        <div class="sTag">
+            <select id="filter">
+                <option value="">Filter By Author</option>
+                <option value="Visakdatta">Visakdatta</option>
+                <option value="Kalhana">Kalhana</option>
+                <option value="Somdeva">Somdeva</option>
+                <option value="Vatsayana">Vatsayana</option>
+                <option value="Amarshmha">Amarshmha</option>
+                <option value="Kamandaka">Kamandaka</option>
+              </select>
+
+              <select id="sortName">
+                <option value="">Sort By Name</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Decending">Decending</option>
+              </select>
+          
+              <select id="sortPrice">
+                <option value="">Sort By Price</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Decending">Decending</option>
+              </select>
+        </div>
+    <div class="container"></div>
+    </div>
+    <div id="page"></div>
+    <div id="footer_main">
+        <div id="footer">
+            <div class="col1">
+                <div class="head">SEMRUSH</div>
+            <ul class="list1">
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Success stories</li>
+                <li>Stats and Facts</li>
+                <li>Data Studies</li>
+                <li>News</li>
+                <li>Custom Report</li>
+            </ul>
+            </div>
+            
+            <div class="col1">
+                <div class="head">Community</div>
+            <ul class="list1">
+                <li>Knowledge Base</li>
+                <li>Academy</li>
+                <li>Semrush API</li>
+                <li>Semrush Blog</li>
+                <li>Webinars</li>
+                <li>Events</li>
+                <li>Podcast</li>
+                <li>Ebooks</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">MORE TOOLS</div>
+            <ul class="list1">
+                <li>Analytics Reports</li>
+                <li>Projects</li>
+                <li>Marketplace</li>
+                <li>Traffic Jet</li>
+                <li>Agency Partners</li>
+                <li>Affiliate Program</li>
+                <li>SEOquake</li>
+                <li>Sensor</li>
+                <li>Amazon Tools</li>
+                <li>Prowly</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">COMPANY</div>
+            <ul class="list1">
+                <li>About Us</li>
+                <li>Partners</li>
+                <li>Legal Info</li>
+                <li>Security Info</li>
+                <li>Contact Us</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">FOLLOW US</div>
+            <ul class="list1">
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>LinkedIn</li>
+                <li>Instagram</li>
+                <li>Pinterest</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">Language</div>
+            <ul class="list1">
+                <li>English</li>
+                <li>Español</li>
+                <li>Deutsch</li>
+                <li>Français</li>
+                <li>Italiano</li>
+                <li>Português (Brasil)</li>
+                <li>中文</li>
+                <li>日本語</li>
+                <li>한국어</li>
+                <li>Tiếng Việt</li>
+            </ul>
+            </div>
+    
+        </div>
+    </div>
+    <div id="end"></div>
+    
+</body>
+</html>
+
+<script>
+    bookArr=[{
+        image:"https://static.semrush.com/ebooks/uploads/ac/ca/acca1f9323a36c53f3889d74fd2704ca.png/resize/360x510/",
+        name:"The Ultimate Site Audit with Semrush",
+        author:"Visakdatta",
+        price:500,
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/5b/e8/5be8c829f5f366562d21a62c274a5db2.png/resize/360x510/",
+        name:"How Businesses Hire Agencies",
+        author:"Kalhana",
+        price:100
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/ca/b5/cab57601aa08583b48c7ea7d487e1711.png/resize/360x510/",
+        name:"Getting Started: The Essential Semrush Checklists",
+        author:"Somdeva",
+        price:1000
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/68/61/686148dc119b388c02d9ed021cc1a4af.png/resize/360x510/",
+        name:"Data-Driven Market Research and Competitive Analysis with Semrush .Trends",
+        author:"Vatsayana",
+        price:1500
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/75/04/750498f8f6b6fb431805f6e4bf171025.png/resize/360x510/",
+        name:"State of Content Ops and Outsourcing Report 2021-2022",
+        author:"Amarshmha",
+        price:150
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/7a/45/7a4519be8f4398dd193d502977320cb7.png/resize/360x510/",
+        name:"The Ultimate Content Calendar Template",
+        author:"Kamandaka",
+        price:280
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/9e/21/9e21a8d00d00839f3a9c5d36b1f69a8f.png/resize/360x510/",
+        name:"The Ultimate Brand Storytelling Template for Your Business",
+        author:"Kamandaka",
+        price:999
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/28/cf/28cfed8af84bf4446f61ff9a18440611.png/resize/360x510/",
+        name:"The Ultimate Content Mapping Template Kit",
+        author:"Amarshmha",
+        price:1589
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/31/f4/31f48c7248a93c8dbb1e5933483ceaea.png/resize/360x510/",
+        name:"The Semrush Content Writing Workbook",
+        author:"Vatsayana",
+        price:2000
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/61/39/613957d78f7f3c17186e2cefcb117be6.png/resize/360x510/",
+        name:"The Ultimate 2021 Blog Writing Checklist",
+        author:"Somdeva",
+        price:2500
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/0c/0b/0c0b80f2a421a44daed49d22739a0b31.png/resize/360x510/",
+        name:"Semrush Keyword Difficulty: Why It is the Most Accurate and How to Use It for Your SEO Strategy",
+        author:"Kalhana",
+        price:3000
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/81/23/8123017476b526c1730ee6b59eb96c66.png/resize/360x510/",
+        name:"The Competitive Content Analysis Template",
+        author:"Visakdatta",
+        price:1200
+    },
+    ]
+</script>
+
+<script>
+    let container=document.querySelector(".container")
+
+    let filter=document.getElementById("filter")
+
+    let sortName=document.getElementById("sortName")
+
+    let sortPrice=document.getElementById("sortPrice")
+
+
+
+function displayTable(data) {
+  container.innerHTML=null;
+  data.forEach(function (elem) {
+    let div = document.createElement("div");
+
+    let image = document.createElement("img");
+    image.setAttribute("src", elem.image);
+
+    let bookName = document.createElement("h3");
+    bookName.innerText = elem.name;
+
+    let author = document.createElement("h4");
+    author.innerText = elem.author;
+
+    let price = document.createElement("p");
+    price.innerText = "price:"+" "+elem.price;
+
+    div.append(image, bookName, author, price);
+    container.append(div);
+  });
+}
+displayTable(bookArr);
+
+
+
+sortName.addEventListener("change",function(){
+    if(sortName.value==="")
+    {
+    //   console.log(sortName.value)
+      displayTable(bookArr);
+    }
+    else if (sortName.value === "Ascending") {
+    bookArr.sort(function (a, b) {
+      let x = a.name;
+      let y = b.name;
+      if (x > y) return 1;
+      if (x < y) return -1;
+      else return 0;
+    });
+    // console.log(bookArr)
+    displayTable(bookArr);
+  }
+  else if (sortName.value === "Decending") {
+    bookArr.sort(function (a, b) {
+      let x = a.name;
+      let y = b.name;
+      if (x > y) return -1;
+      if (x < y) return 1;
+      else return 0;
+    });
+    displayTable(bookArr);
+  }
+  })
+
+
+  sortPrice.addEventListener("change",function(){
+    if(sortPrice.value==="")
+    {
+        displayTable(bookArr);
+    }
+    else if (sortPrice.value === "Ascending") {
+        bookArr.sort(function (a, b) {
+      // console.log(a.price)
+      if (a.price > b.price) return 1;
+      if (a.price < b.price) return -1;
+      else return 0;
+      // displayTable(bookArr);
+    });
+    // console.log(bookArr)
+    displayTable(bookArr);
+  }
+  else if (sortPrice.value === "Decending") {
+    bookArr.sort(function (a, b) {
+      if (a.price > b.price) return -1;
+      if (a.price < b.price) return 1;
+      else return 0;
+      // displayTable(bookArr);
+    });
+    displayTable(bookArr);
+  }
+  })
+
+  filter.addEventListener("change",function(){
+      if(filter.value===""){
+        displayTable(bookArr);
+      }
+      else{
+          let authorArr=bookArr.filter(function(ele){
+          return ele.author===filter.value;
+          
+      })
+      displayTable(authorArr);
+      }
+  })
+</script>
+
+<script>
+    let btn=document.getElementById("page")
+
+    let div = document.createElement("div");
+
+    let page1=document.createElement("button");
+    page1.innerText="1"
+
+    let page2=document.createElement("button");
+    page2.innerText="2"
+
+    let page3=document.createElement("button");
+    page3.innerText="3"
+
+    let page4=document.createElement("button");
+    page4.innerText="4"
+
+    let page5=document.createElement("button");
+    page5.innerText="5"
+
+    div.append(page1,page2,page3,page4,page5)
+    btn.append(div)
+</script>
+
+<script>
+    let foot=document.getElementById("end")
+
+    let heading=document.createElement("h3");
+    heading.innerText="SEMRUSH"
+
+    let para=document.createElement("p");
+    para.innerText="© 2008 - 2022 Semrush. All rights reserved."
+
+    foot.append(heading,para)
+</script>
+
+<script>
+    let nav=document.getElementById("nav");
+    
+    function displayTable() {
+
+    let div = document.createElement("div");
+
+    let head=document.createElement("h3");
+    head.innerText="SEMRUSH"
+
+    let heading1=document.createElement("h3");
+    heading1.innerText="Community:"
+
+    let heading2=document.createElement("h4");
+    heading2.innerText="Blog"
+
+    let heading3=document.createElement("h4");
+    heading3.innerText="Webinars"
+
+    let heading4=document.createElement("h4");
+    heading4.innerText="Podcast"
+
+    let heading5=document.createElement("h4");
+    heading5.innerText="Ebooks"
+
+    let heading6=document.createElement("h4");
+    heading6.innerText="Events"
+
+    let loginBtn=document.createElement("button");
+    loginBtn.innerText="Login"
+
+
+    div.append(heading,heading1,heading3,heading4,heading5,heading6,loginBtn);
+    nav.append(div);
+}
+displayTable();
+
+</script>
