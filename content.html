@@ -25,8 +25,8 @@
             margin-top: 50px;
             text-align: center;
         }
+        /* content books */
         .container {
-
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 100px;
@@ -34,6 +34,7 @@
             margin: auto;
             margin-top: 50px;
             margin-bottom: 50px;
+            cursor: pointer;
             /* padding-top: 80px; */
             /* border: 1px solid red; */
         }
@@ -57,6 +58,9 @@
             line-height: 20px;
             padding: 10px;
         }
+        .container > div >h3:hover{
+            color: #008ff8;;
+        }
         .container > div >h4{
             color: gray;
             margin-left: 0px;
@@ -75,6 +79,7 @@
             padding-top: 40px;
             
         }
+        /* footer */
         #footer{
             display: grid;
             grid-template-columns: repeat(6,1fr);
@@ -337,77 +342,93 @@
         name:"The Ultimate Site Audit with Semrush",
         author:"Visakdatta",
         price:500,
+        UID:1,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/5b/e8/5be8c829f5f366562d21a62c274a5db2.png/resize/360x510/",
         name:"How Businesses Hire Agencies",
         author:"Kalhana",
-        price:100
+        price:100,
+        UID:2,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/ca/b5/cab57601aa08583b48c7ea7d487e1711.png/resize/360x510/",
         name:"Getting Started: The Essential Semrush Checklists",
         author:"Somdeva",
-        price:1000
+        price:1000,
+        UID:3,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/68/61/686148dc119b388c02d9ed021cc1a4af.png/resize/360x510/",
         name:"Data-Driven Market Research and Competitive Analysis with Semrush .Trends",
         author:"Vatsayana",
-        price:1500
+        price:1500,
+        UID:4,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/75/04/750498f8f6b6fb431805f6e4bf171025.png/resize/360x510/",
         name:"State of Content Ops and Outsourcing Report 2021-2022",
         author:"Amarshmha",
-        price:150
+        price:150,
+        UID:5,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/7a/45/7a4519be8f4398dd193d502977320cb7.png/resize/360x510/",
         name:"The Ultimate Content Calendar Template",
         author:"Kamandaka",
-        price:280
+        price:280,
+        UID:6,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/9e/21/9e21a8d00d00839f3a9c5d36b1f69a8f.png/resize/360x510/",
         name:"The Ultimate Brand Storytelling Template for Your Business",
         author:"Kamandaka",
-        price:999
+        price:999,
+        UID:7,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/28/cf/28cfed8af84bf4446f61ff9a18440611.png/resize/360x510/",
         name:"The Ultimate Content Mapping Template Kit",
         author:"Amarshmha",
-        price:1589
+        price:1589,
+        UID:8,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/31/f4/31f48c7248a93c8dbb1e5933483ceaea.png/resize/360x510/",
         name:"The Semrush Content Writing Workbook",
         author:"Vatsayana",
-        price:2000
+        price:2000,
+        UID:9,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/61/39/613957d78f7f3c17186e2cefcb117be6.png/resize/360x510/",
         name:"The Ultimate 2021 Blog Writing Checklist",
         author:"Somdeva",
-        price:2500
+        price:2500,
+        UID:10,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/0c/0b/0c0b80f2a421a44daed49d22739a0b31.png/resize/360x510/",
         name:"Semrush Keyword Difficulty: Why It is the Most Accurate and How to Use It for Your SEO Strategy",
         author:"Kalhana",
-        price:3000
+        price:3000,
+        UID:11,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/81/23/8123017476b526c1730ee6b59eb96c66.png/resize/360x510/",
         name:"The Competitive Content Analysis Template",
         author:"Visakdatta",
-        price:1200
+        price:1200,
+        UID:12,
     },
     ]
+    localStorage.setItem("BookInfo",JSON.stringify(bookArr));
 </script>
 
 <script>
+    let BookInfoLS=JSON.parse(localStorage.getItem("BookInfo")) || []
+    // console.log(BookInfoLS)
+
     let container=document.querySelector(".container")
 
     let filter=document.getElementById("filter")
@@ -425,9 +446,17 @@ function displayTable(data) {
 
     let image = document.createElement("img");
     image.setAttribute("src", elem.image);
+    // image.addEventListener("click",function(){
+    //     window.location.href="page1_inside.html"
+    // })
 
     let bookName = document.createElement("h3");
     bookName.innerText = elem.name;
+    bookName.addEventListener("click",function(){
+        // console.log(typeof(elem.name))
+        // window.location.href="page1_inside.html"
+        openPage(elem)
+    })
 
     let author = document.createElement("h4");
     author.innerText = elem.author;
@@ -439,7 +468,7 @@ function displayTable(data) {
     container.append(div);
   });
 }
-displayTable(bookArr);
+displayTable(BookInfoLS);
 
 
 
@@ -447,28 +476,28 @@ sortName.addEventListener("change",function(){
     if(sortName.value==="")
     {
     //   console.log(sortName.value)
-      displayTable(bookArr);
+      displayTable(BookInfoLS);
     }
     else if (sortName.value === "Ascending") {
-    bookArr.sort(function (a, b) {
+    BookInfoLS.sort(function (a, b) {
       let x = a.name;
       let y = b.name;
       if (x > y) return 1;
       if (x < y) return -1;
       else return 0;
     });
-    // console.log(bookArr)
-    displayTable(bookArr);
+    // console.log(BookInfoLS)
+    displayTable(BookInfoLS);
   }
   else if (sortName.value === "Decending") {
-    bookArr.sort(function (a, b) {
+    BookInfoLS.sort(function (a, b) {
       let x = a.name;
       let y = b.name;
       if (x > y) return -1;
       if (x < y) return 1;
       else return 0;
     });
-    displayTable(bookArr);
+    displayTable(BookInfoLS);
   }
   })
 
@@ -476,42 +505,51 @@ sortName.addEventListener("change",function(){
   sortPrice.addEventListener("change",function(){
     if(sortPrice.value==="")
     {
-        displayTable(bookArr);
+        displayTable(BookInfoLS);
     }
     else if (sortPrice.value === "Ascending") {
-        bookArr.sort(function (a, b) {
+        BookInfoLS.sort(function (a, b) {
       // console.log(a.price)
       if (a.price > b.price) return 1;
       if (a.price < b.price) return -1;
       else return 0;
-      // displayTable(bookArr);
+      // displayTable(BookInfoLS);
     });
-    // console.log(bookArr)
-    displayTable(bookArr);
+    // console.log(BookInfoLS)
+    displayTable(BookInfoLS);
   }
   else if (sortPrice.value === "Decending") {
-    bookArr.sort(function (a, b) {
+    BookInfoLS.sort(function (a, b) {
       if (a.price > b.price) return -1;
       if (a.price < b.price) return 1;
       else return 0;
-      // displayTable(bookArr);
+      // displayTable(BookInfoLS);
     });
-    displayTable(bookArr);
+    displayTable(BookInfoLS);
   }
   })
 
   filter.addEventListener("change",function(){
       if(filter.value===""){
-        displayTable(bookArr);
+        displayTable(BookInfoLS);
       }
       else{
-          let authorArr=bookArr.filter(function(ele){
+          let authorArr=BookInfoLS.filter(function(ele){
           return ele.author===filter.value;
           
       })
       displayTable(authorArr);
       }
   })
+  function openPage(elem){
+        if(elem.UID==1)
+        {
+            window.location.href="page1_inside.html";
+        }
+        else{
+            alert("done")
+        }
+  }
 </script>
 
 <script>
@@ -553,7 +591,7 @@ sortName.addEventListener("change",function(){
 <script>
     let nav=document.getElementById("nav");
     
-    function displayTable() {
+    function displaynav() {
 
     let div = document.createElement("div");
 
@@ -585,6 +623,6 @@ sortName.addEventListener("change",function(){
     div.append(heading,heading1,heading3,heading4,heading5,heading6,loginBtn);
     nav.append(div);
 }
-displayTable();
+displaynav();
 
 </script>
