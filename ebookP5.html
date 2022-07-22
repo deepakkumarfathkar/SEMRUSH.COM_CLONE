@@ -1,0 +1,573 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebooks</title>
+    <style>
+        #up_content{
+            border: 1px solid green;
+            text-align: center;
+            background-color: #0071c5;
+            color: white;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        #up_content h1{
+            margin-top: 0%;
+        }
+        #up_content p{
+            margin: auto;
+            width: 50%;
+            font-size: 20px;
+        }
+        .sTag{
+            margin-top: 50px;
+            text-align: center;
+        }
+        /* content books */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 100px;
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            cursor: pointer;
+            /* padding-top: 80px; */
+            /* border: 1px solid red; */
+        }
+        .container > div {
+            height: 490px;
+            width: 100%;
+            text-align: center;
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+            border-radius: 10px;
+            line-height: 10px;
+            margin: auto;
+            /* padding: 20px; */
+            /* border: 1px solid cyan; */
+        }
+        .container > div > img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .container > div >h3{
+            line-height: 20px;
+            padding: 10px;
+        }
+        .container > div >h3:hover{
+            color: #008ff8;;
+        }
+        .container > div >h4{
+            color: gray;
+            margin-left: 0px;
+
+        }
+        .container > div >p{
+            color: #0071c5;
+        }
+        #footer_main{
+            display: flex;
+            margin-top: auto;
+            background-color: #111317;
+            color: white;
+            flex-flow: row wrap;
+            padding-bottom: 15px;
+            padding-top: 40px;
+            
+        }
+        /* footer */
+        #footer{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            margin: auto;
+            gap: 185px;
+        }
+        ul{
+            line-height: 25px;
+            list-style: none;
+            /* list-style; */
+        }
+        .col1{
+            max-width: 160px;
+            text-align: center;
+        }
+
+        .head {
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .list1{
+            padding: inherit;
+            font-size: 14px;
+            color: gray;
+        }
+        li:hover{
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        #page{
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            padding: 20px;
+        }
+        #page>div>button{
+            padding: 15px 20px;
+            margin-right: 10px;
+            border: none;
+        }
+        #page>div>button:hover{
+            background-color: #0071c5;
+            color: whitesmoke;
+        }
+        #page>div>button:last-child{
+            background-color: #0071c5;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        #end{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            gap: 20px;
+            text-align: center;
+            background-color: #000;
+            color: whitesmoke;
+        }
+        #end>p{
+            margin-top: 20px;
+            color: gray;
+        }
+        #nav{
+            width: 100%;
+            background-color: #111317;
+            color: whitesmoke;
+        }
+
+        #nav>div{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-around; */
+        }
+        #nav>div>h3,h4{
+            margin-left: 30px;
+        }
+        #nav>div>h3:nth-child(2)
+        {
+            color: gray;
+        }
+        #nav>div>h4{
+            color: grey;
+            cursor: pointer;
+        }
+        #nav>div>h4:hover{
+            color: whitesmoke;
+        }
+        #nav>div>h4:nth-child(6){
+            color: whitesmoke;
+        }
+        #nav>div>button{
+            background-color: #111317;
+            color: whitesmoke;
+            border: solid whitesmoke;
+            padding: 10px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+        #filter,#sortName,#sortPrice{
+            padding: 10px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        #filter option,#sortName option,#sortPrice option{
+            background-color: #0071c5;
+            color: whitesmoke;
+        }
+
+
+        @media all and (min-width: 481px) and (max-width: 868px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        #footer{
+            gap: 50px;
+        }
+      }
+
+      @media all and (min-width: 320px) and (max-width: 480px) {
+        .container {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        #footer{
+            gap: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="nav">
+    </div>
+    <div id="up_content">
+        <h1>Ebooks</h1>
+        <p>Here you can find  a range of downloadable guides in PDF format that can help you broaden your knowledge and improve your skills.</p>
+    </div>
+    <div id="content">
+        <div class="sTag">
+            <select id="filter">
+                <option value="">Filter By Author</option>
+                <option value="Visakdatta">Visakdatta</option>
+                <option value="Kalhana">Kalhana</option>
+                <option value="Somdeva">Somdeva</option>
+                <option value="Vatsayana">Vatsayana</option>
+                <option value="Amarshmha">Amarshmha</option>
+                <option value="Kamandaka">Kamandaka</option>
+              </select>
+
+              <select id="sortName">
+                <option value="">Sort By Name</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Decending">Decending</option>
+              </select>
+          
+              <select id="sortPrice">
+                <option value="">Sort By Price</option>
+                <option value="Ascending">Ascending</option>
+                <option value="Decending">Decending</option>
+              </select>
+        </div>
+    <div class="container"></div>
+    </div>
+    <div id="page"></div>
+    <div id="footer_main">
+        <div id="footer">
+            <div class="col1">
+                <div class="head">SEMRUSH</div>
+            <ul class="list1">
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Success stories</li>
+                <li>Stats and Facts</li>
+                <li>Data Studies</li>
+                <li>News</li>
+                <li>Custom Report</li>
+            </ul>
+            </div>
+            
+            <div class="col1">
+                <div class="head">Community</div>
+            <ul class="list1">
+                <li>Knowledge Base</li>
+                <li>Academy</li>
+                <li>Semrush API</li>
+                <li>Semrush Blog</li>
+                <li>Webinars</li>
+                <li>Events</li>
+                <li>Podcast</li>
+                <li>Ebooks</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">MORE TOOLS</div>
+            <ul class="list1">
+                <li>Analytics Reports</li>
+                <li>Projects</li>
+                <li>Marketplace</li>
+                <li>Traffic Jet</li>
+                <li>Agency Partners</li>
+                <li>Affiliate Program</li>
+                <li>SEOquake</li>
+                <li>Sensor</li>
+                <li>Amazon Tools</li>
+                <li>Prowly</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">COMPANY</div>
+            <ul class="list1">
+                <li>About Us</li>
+                <li>Partners</li>
+                <li>Legal Info</li>
+                <li>Security Info</li>
+                <li>Contact Us</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">FOLLOW US</div>
+            <ul class="list1">
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>LinkedIn</li>
+                <li>Instagram</li>
+                <li>Pinterest</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">Language</div>
+            <ul class="list1">
+                <li>English</li>
+                <li>Español</li>
+                <li>Deutsch</li>
+                <li>Français</li>
+                <li>Italiano</li>
+                <li>Português (Brasil)</li>
+                <li>中文</li>
+                <li>日本語</li>
+                <li>한국어</li>
+                <li>Tiếng Việt</li>
+            </ul>
+            </div>
+    
+        </div>
+    </div>
+    <div id="end"></div>
+    
+</body>
+</html>
+
+<script>
+    bookArr4=[{
+        image:"https://static.semrush.com/ebooks/uploads/3b/31/3b3139e4f1e429fd32945b04024caaf7.jpg/resize/360x510/",
+        name:"Online Marketing for a Small Business: SEMrush Solutions",
+        author:"Visakdatta",
+        price:500,
+        UID:33,
+    },
+    {
+        image:"https://static.semrush.com/ebooks/uploads/e4/b0/e4b01aa10d69dda96e37bf9d20a55fcd.png/resize/360x510/",
+        name:"The Ultimate Guide to Twitter Chats by SEMrush",
+        author:"Kalhana",
+        price:100,
+        UID:34,
+    },
+    ]
+    localStorage.setItem("BookInfo4",JSON.stringify(bookArr4));
+</script>
+
+<script>
+    let BookInfo4LS=JSON.parse(localStorage.getItem("BookInfo4")) || []
+    // console.log(BookInfo4LS)
+
+    let container=document.querySelector(".container")
+
+    let filter=document.getElementById("filter")
+
+    let sortName=document.getElementById("sortName")
+
+    let sortPrice=document.getElementById("sortPrice")
+
+
+
+function displayTable(data) {
+  container.innerHTML=null;
+  data.forEach(function (elem) {
+    let div = document.createElement("div");
+
+    let image = document.createElement("img");
+    image.setAttribute("src", elem.image);
+    // image.addEventListener("click",function(){
+    //     window.location.href="page1_inside.html"
+    // })
+
+    let bookName = document.createElement("h3");
+    bookName.innerText = elem.name;
+    bookName.addEventListener("click",function(){
+        // console.log(typeof(elem.name))
+        // window.location.href="page1_inside.html"
+        openPage(elem)
+    })
+
+    let author = document.createElement("h4");
+    author.innerText = elem.author;
+
+    let price = document.createElement("p");
+    price.innerText = "price:"+" "+elem.price;
+
+    div.append(image, bookName, author, price);
+    container.append(div);
+  });
+}
+displayTable(BookInfo4LS);
+
+
+
+sortName.addEventListener("change",function(){
+    if(sortName.value==="")
+    {
+    //   console.log(sortName.value)
+      displayTable(BookInfo4LS);
+    }
+    else if (sortName.value === "Ascending") {
+    BookInfo4LS.sort(function (a, b) {
+      let x = a.name;
+      let y = b.name;
+      if (x > y) return 1;
+      if (x < y) return -1;
+      else return 0;
+    });
+    // console.log(BookInfo4LS)
+    displayTable(BookInfo4LS);
+  }
+  else if (sortName.value === "Decending") {
+    BookInfo4LS.sort(function (a, b) {
+      let x = a.name;
+      let y = b.name;
+      if (x > y) return -1;
+      if (x < y) return 1;
+      else return 0;
+    });
+    displayTable(BookInfo4LS);
+  }
+  })
+
+
+  sortPrice.addEventListener("change",function(){
+    if(sortPrice.value==="")
+    {
+        displayTable(BookInfo4LS);
+    }
+    else if (sortPrice.value === "Ascending") {
+        BookInfo4LS.sort(function (a, b) {
+      // console.log(a.price)
+      if (a.price > b.price) return 1;
+      if (a.price < b.price) return -1;
+      else return 0;
+      // displayTable(BookInfo4LS);
+    });
+    // console.log(BookInfo4LS)
+    displayTable(BookInfo4LS);
+  }
+  else if (sortPrice.value === "Decending") {
+    BookInfo4LS.sort(function (a, b) {
+      if (a.price > b.price) return -1;
+      if (a.price < b.price) return 1;
+      else return 0;
+      // displayTable(BookInfo4LS);
+    });
+    displayTable(BookInfo4LS);
+  }
+  })
+
+  filter.addEventListener("change",function(){
+      if(filter.value===""){
+        displayTable(BookInfo4LS);
+      }
+      else{
+          let authorArr=BookInfo4LS.filter(function(ele){
+          return ele.author===filter.value;
+          
+      })
+      displayTable(authorArr);
+      }
+  })
+  function openPage(elem){
+        if(elem.UID==1)
+        {
+            window.location.href="page1_inside.html";
+        }
+        else{
+            alert("done")
+        }
+  }
+</script>
+
+<script>
+    let btn=document.getElementById("page")
+
+    let div = document.createElement("div");
+
+    let page1=document.createElement("button");
+    page1.innerText="1"
+    page1.addEventListener("click",function(){
+        window.location.href="content.html"
+    })
+    
+
+    let page2=document.createElement("button");
+    page2.innerText="2"
+    page2.addEventListener("click",function(){
+        window.location.href="ebookP2.html"
+    })
+    
+
+    let page3=document.createElement("button");
+    page3.innerText="3"
+    page3.addEventListener("click",function(){
+        window.location.href="ebookP3.html"
+    })
+
+    let page4=document.createElement("button");
+    page4.innerText="4"
+    page4.addEventListener("click",function(){
+        window.location.href="ebookP4.html"
+    })
+
+    let page5=document.createElement("button");
+    page5.innerText="5";
+    
+
+    div.append(page1,page2,page3,page4,page5)
+    btn.append(div)
+</script>
+
+<script>
+    let foot=document.getElementById("end")
+
+    let heading=document.createElement("h3");
+    heading.innerText="SEMRUSH"
+
+    let para=document.createElement("p");
+    para.innerText="© 2008 - 2022 Semrush. All rights reserved."
+
+    foot.append(heading,para)
+</script>
+
+<script>
+    let nav=document.getElementById("nav");
+    
+    function displaynav() {
+
+    let div = document.createElement("div");
+
+    let heading=document.createElement("h3");
+    heading.innerText="SEMRUSH"
+
+    let heading1=document.createElement("h3");
+    heading1.innerText="Community:"
+
+    let heading2=document.createElement("h4");
+    heading2.innerText="Blog"
+
+    let heading3=document.createElement("h4");
+    heading3.innerText="Webinars"
+
+    let heading4=document.createElement("h4");
+    heading4.innerText="Podcast"
+
+    let heading5=document.createElement("h4");
+    heading5.innerText="Ebooks"
+
+    let heading6=document.createElement("h4");
+    heading6.innerText="Events"
+
+    let loginBtn=document.createElement("button");
+    loginBtn.innerText="Login"
+
+
+    div.append(heading,heading1,heading2,heading3,heading4,heading5,heading6,loginBtn);
+    nav.append(div);
+}
+displaynav();
+
+</script>
