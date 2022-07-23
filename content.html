@@ -7,7 +7,7 @@
     <title>Ebooks</title>
     <style>
         #up_content {
-            border: 1px solid green;
+            /* border: 1px solid green; */
             text-align: center;
             background-color: #0071c5;
             color: white;
@@ -95,7 +95,7 @@
 
         }
 
-        
+
         #footer {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -378,6 +378,27 @@
             color: whitesmoke;
         }
 
+        @media all and (min-width: 1000px) and (max-width: 1330px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            #footer {
+                gap: 85px;
+            }
+
+            #nav>div {
+                width: 80%;
+                font-size: 12px;
+            }
+
+            .show-btn {
+                float: right;
+                margin: 8px 30px 8px 20px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
+        }
 
         @media all and (min-width: 671px) and (max-width: 869px) {
             .container {
@@ -388,18 +409,20 @@
                 gap: 50px;
             }
 
-            #nav>div{
+            #nav>div {
                 width: 100%;
                 font-size: 12px;
             }
+
             .show-btn {
-            float: right;
-            margin: 8px 30px 8px 250px;
-            padding: 8px 8px;
-            font-size: 12px;
+                float: right;
+                margin: 8px 30px 8px 250px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
         }
-        }
-        @media all and (min-width: 671px) and (max-width: 950px){
+
+        @media all and (min-width: 671px) and (max-width: 1000px) {
             .container {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -408,16 +431,17 @@
                 gap: 50px;
             }
 
-            #nav>div{
+            #nav>div {
                 width: 80%;
                 font-size: 12px;
             }
+
             .show-btn {
-            float: right;
-            margin: 8px 30px 8px 20px;
-            padding: 8px 8px;
-            font-size: 12px;
-        }
+                float: right;
+                margin: 8px 30px 8px 20px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
         }
 
         @media all and (min-width: 320px) and (max-width: 670px) {
@@ -428,21 +452,24 @@
             #footer {
                 gap: 5px;
             }
-            #nav>div{
+
+            #nav>div {
                 width: 20%;
                 font-size: 6px;
                 margin-left: -10px;
             }
+
             #nav>div>h3,
-        h4 {
-            margin-left: 12px;
-        }
+            h4 {
+                margin-left: 12px;
+            }
+
             .show-btn {
-            float: right;
-            margin: 3px 15px 4px 209px;
-            padding: 4px 4px;
-            font-size: 6px;
-        }
+                float: right;
+                margin: 3px 15px 4px 209px;
+                padding: 4px 4px;
+                font-size: 6px;
+            }
         }
     </style>
 </head>
@@ -516,7 +543,7 @@
     </div>
 
     <div id="page"></div>
-    
+
     <div id="footer_main">
         <div id="footer">
             <div class="col1">

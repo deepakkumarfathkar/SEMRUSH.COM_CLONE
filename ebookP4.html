@@ -1,11 +1,12 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ebooks</title>
     <style>
-        #up_content{
+        #up_content {
             border: 1px solid green;
             text-align: center;
             background-color: #0071c5;
@@ -13,18 +14,22 @@
             padding-top: 100px;
             padding-bottom: 100px;
         }
-        #up_content h1{
+
+        #up_content h1 {
             margin-top: 0%;
         }
-        #up_content p{
+
+        #up_content p {
             margin: auto;
             width: 50%;
             font-size: 20px;
         }
-        .sTag{
+
+        .sTag {
             margin-top: 50px;
             text-align: center;
         }
+
         /* content books */
         .container {
             display: grid;
@@ -38,7 +43,8 @@
             /* padding-top: 80px; */
             /* border: 1px solid red; */
         }
-        .container > div {
+
+        .container>div {
             height: 490px;
             width: 100%;
             text-align: center;
@@ -49,27 +55,34 @@
             /* padding: 20px; */
             /* border: 1px solid cyan; */
         }
-        .container > div > img {
+
+        .container>div>img {
             width: 100%;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
-        .container > div >h3{
+
+        .container>div>h3 {
             line-height: 20px;
             padding: 10px;
         }
-        .container > div >h3:hover{
-            color: #008ff8;;
+
+        .container>div>h3:hover {
+            color: #008ff8;
+            ;
         }
-        .container > div >h4{
+
+        .container>div>h4 {
             color: gray;
             margin-left: 0px;
 
         }
-        .container > div >p{
+
+        .container>div>p {
             color: #0071c5;
         }
-        #footer_main{
+
+        #footer_main {
             display: flex;
             margin-top: auto;
             background-color: #111317;
@@ -77,21 +90,24 @@
             flex-flow: row wrap;
             padding-bottom: 15px;
             padding-top: 40px;
-            
+
         }
+
         /* footer */
-        #footer{
+        #footer {
             display: grid;
-            grid-template-columns: repeat(6,1fr);
+            grid-template-columns: repeat(6, 1fr);
             margin: auto;
             gap: 185px;
         }
-        ul{
+
+        ul {
             line-height: 25px;
             list-style: none;
             /* list-style; */
         }
-        .col1{
+
+        .col1 {
             max-width: 160px;
             text-align: center;
         }
@@ -102,36 +118,43 @@
             color: #fff;
             text-transform: uppercase;
         }
-        .list1{
+
+        .list1 {
             padding: inherit;
             font-size: 14px;
             color: gray;
         }
-        li:hover{
+
+        li:hover {
             color: whitesmoke;
             cursor: pointer;
         }
-        #page{
+
+        #page {
             display: flex;
             margin: auto;
             justify-content: center;
             padding: 20px;
         }
-        #page>div>button{
+
+        #page>div>button {
             padding: 15px 20px;
             margin-right: 10px;
             border: none;
         }
-        #page>div>button:hover{
+
+        #page>div>button:hover {
             background-color: #0071c5;
             color: whitesmoke;
         }
-        #page>div>button:nth-child(4){
+
+        #page>div>button:nth-child(4) {
             background-color: #0071c5;
             color: whitesmoke;
             cursor: pointer;
         }
-        #end{
+
+        #end {
             display: flex;
             justify-content: center;
             margin: auto;
@@ -140,41 +163,49 @@
             background-color: #000;
             color: whitesmoke;
         }
-        #end>p{
+
+        #end>p {
             margin-top: 20px;
             color: gray;
         }
-        #nav{
+
+        #nav {
             width: 100%;
             background-color: #111317;
             color: whitesmoke;
         }
 
-        #nav>div{
+        #nav>div {
             width: 70%;
             margin: auto;
             display: flex;
             align-items: center;
             /* justify-content: space-around; */
         }
-        #nav>div>h3,h4{
+
+        #nav>div>h3,
+        h4 {
             margin-left: 30px;
         }
-        #nav>div>h3:nth-child(2)
-        {
+
+        #nav>div>h3:nth-child(2) {
             color: gray;
         }
-        #nav>div>h4{
+
+        #nav>div>h4 {
             color: grey;
             cursor: pointer;
         }
-        #nav>div>h4:hover{
+
+        #nav>div>h4:hover {
             color: whitesmoke;
         }
-        #nav>div>h4:nth-child(6){
+
+        #nav>div>h4:nth-child(6) {
             color: whitesmoke;
         }
-        #nav>div>button{
+
+        #nav>div>button {
             background-color: #111317;
             color: whitesmoke;
             border: solid whitesmoke;
@@ -182,42 +213,125 @@
             margin-left: auto;
             cursor: pointer;
         }
-        #filter,#sortName,#sortPrice{
+
+        #filter,
+        #sortName,
+        #sortPrice {
             padding: 10px;
             border-radius: 10px;
             margin-right: 10px;
         }
-        #filter option,#sortName option,#sortPrice option{
+
+        #filter option,
+        #sortName option,
+        #sortPrice option {
             background-color: #0071c5;
             color: whitesmoke;
         }
 
+        @media all and (min-width: 1000px) and (max-width: 1330px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr);
+            }
 
-        @media all and (min-width: 481px) and (max-width: 868px) {
-        .container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        #footer{
-            gap: 50px;
-        }
-      }
+            #footer {
+                gap: 85px;
+            }
 
-      @media all and (min-width: 320px) and (max-width: 480px) {
-        .container {
-          grid-template-columns: repeat(1, 1fr);
+            #nav>div {
+                width: 80%;
+                font-size: 12px;
+            }
+
+            .show-btn {
+                float: right;
+                margin: 8px 30px 8px 20px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
         }
-        #footer{
-            gap: 10px;
+
+        @media all and (min-width: 671px) and (max-width: 869px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #footer {
+                gap: 50px;
+            }
+
+            #nav>div {
+                width: 100%;
+                font-size: 12px;
+            }
+
+            .show-btn {
+                float: right;
+                margin: 8px 30px 8px 250px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
         }
-    }
+
+        @media all and (min-width: 671px) and (max-width: 1000px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            #footer {
+                gap: 50px;
+            }
+
+            #nav>div {
+                width: 80%;
+                font-size: 12px;
+            }
+
+            .show-btn {
+                float: right;
+                margin: 8px 30px 8px 20px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
+        }
+
+        @media all and (min-width: 320px) and (max-width: 670px) {
+            .container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            #footer {
+                gap: 5px;
+            }
+
+            #nav>div {
+                width: 20%;
+                font-size: 6px;
+                margin-left: -10px;
+            }
+
+            #nav>div>h3,
+            h4 {
+                margin-left: 12px;
+            }
+
+            .show-btn {
+                float: right;
+                margin: 3px 15px 4px 209px;
+                padding: 4px 4px;
+                font-size: 6px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="nav">
     </div>
     <div id="up_content">
         <h1>Ebooks</h1>
-        <p>Here you can find  a range of downloadable guides in PDF format that can help you broaden your knowledge and improve your skills.</p>
+        <p>Here you can find a range of downloadable guides in PDF format that can help you broaden your knowledge and
+            improve your skills.</p>
     </div>
     <div id="content">
         <div class="sTag">
@@ -229,320 +343,319 @@
                 <option value="Vatsayana">Vatsayana</option>
                 <option value="Amarshmha">Amarshmha</option>
                 <option value="Kamandaka">Kamandaka</option>
-              </select>
+            </select>
 
-              <select id="sortName">
+            <select id="sortName">
                 <option value="">Sort By Name</option>
                 <option value="Ascending">Ascending</option>
                 <option value="Decending">Decending</option>
-              </select>
-          
-              <select id="sortPrice">
+            </select>
+
+            <select id="sortPrice">
                 <option value="">Sort By Price</option>
                 <option value="Ascending">Ascending</option>
                 <option value="Decending">Decending</option>
-              </select>
+            </select>
         </div>
-    <div class="container"></div>
+        <div class="container"></div>
     </div>
     <div id="page"></div>
     <div id="footer_main">
         <div id="footer">
             <div class="col1">
                 <div class="head">SEMRUSH</div>
-            <ul class="list1">
-                <li>Features</li>
-                <li>Pricing</li>
-                <li>Success stories</li>
-                <li>Stats and Facts</li>
-                <li>Data Studies</li>
-                <li>News</li>
-                <li>Custom Report</li>
-            </ul>
+                <ul class="list1">
+                    <li>Features</li>
+                    <li>Pricing</li>
+                    <li>Success stories</li>
+                    <li>Stats and Facts</li>
+                    <li>Data Studies</li>
+                    <li>News</li>
+                    <li>Custom Report</li>
+                </ul>
             </div>
-            
+
             <div class="col1">
                 <div class="head">Community</div>
-            <ul class="list1">
-                <li>Knowledge Base</li>
-                <li>Academy</li>
-                <li>Semrush API</li>
-                <li>Semrush Blog</li>
-                <li>Webinars</li>
-                <li>Events</li>
-                <li>Podcast</li>
-                <li>Ebooks</li>
-            </ul>
+                <ul class="list1">
+                    <li>Knowledge Base</li>
+                    <li>Academy</li>
+                    <li>Semrush API</li>
+                    <li>Semrush Blog</li>
+                    <li>Webinars</li>
+                    <li>Events</li>
+                    <li>Podcast</li>
+                    <li>Ebooks</li>
+                </ul>
             </div>
 
             <div class="col1">
                 <div class="head">MORE TOOLS</div>
-            <ul class="list1">
-                <li>Analytics Reports</li>
-                <li>Projects</li>
-                <li>Marketplace</li>
-                <li>Traffic Jet</li>
-                <li>Agency Partners</li>
-                <li>Affiliate Program</li>
-                <li>SEOquake</li>
-                <li>Sensor</li>
-                <li>Amazon Tools</li>
-                <li>Prowly</li>
-            </ul>
+                <ul class="list1">
+                    <li>Analytics Reports</li>
+                    <li>Projects</li>
+                    <li>Marketplace</li>
+                    <li>Traffic Jet</li>
+                    <li>Agency Partners</li>
+                    <li>Affiliate Program</li>
+                    <li>SEOquake</li>
+                    <li>Sensor</li>
+                    <li>Amazon Tools</li>
+                    <li>Prowly</li>
+                </ul>
             </div>
 
             <div class="col1">
                 <div class="head">COMPANY</div>
-            <ul class="list1">
-                <li>About Us</li>
-                <li>Partners</li>
-                <li>Legal Info</li>
-                <li>Security Info</li>
-                <li>Contact Us</li>
-            </ul>
+                <ul class="list1">
+                    <li>About Us</li>
+                    <li>Partners</li>
+                    <li>Legal Info</li>
+                    <li>Security Info</li>
+                    <li>Contact Us</li>
+                </ul>
             </div>
 
             <div class="col1">
                 <div class="head">FOLLOW US</div>
-            <ul class="list1">
-                <li>Twitter</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
-                <li>Instagram</li>
-                <li>Pinterest</li>
-            </ul>
+                <ul class="list1">
+                    <li>Twitter</li>
+                    <li>Facebook</li>
+                    <li>LinkedIn</li>
+                    <li>Instagram</li>
+                    <li>Pinterest</li>
+                </ul>
             </div>
 
             <div class="col1">
                 <div class="head">Language</div>
-            <ul class="list1">
-                <li>English</li>
-                <li>Español</li>
-                <li>Deutsch</li>
-                <li>Français</li>
-                <li>Italiano</li>
-                <li>Português (Brasil)</li>
-                <li>中文</li>
-                <li>日本語</li>
-                <li>한국어</li>
-                <li>Tiếng Việt</li>
-            </ul>
+                <ul class="list1">
+                    <li>English</li>
+                    <li>Español</li>
+                    <li>Deutsch</li>
+                    <li>Français</li>
+                    <li>Italiano</li>
+                    <li>Português (Brasil)</li>
+                    <li>中文</li>
+                    <li>日本語</li>
+                    <li>한국어</li>
+                    <li>Tiếng Việt</li>
+                </ul>
             </div>
-    
+
         </div>
     </div>
     <div id="end"></div>
-    
+
 </body>
+
 </html>
 
 <script>
-    bookArr3=[{
-        image:"https://static.semrush.com/ebooks/uploads/5e/d2/5ed2471108cd29024f3e6e9e9fb02579.png/resize/360x510/",
-        name:"Digital Real Estate: Winning the Indian Market with Data",
-        author:"Visakdatta",
-        price:500,
-        UID:37,
+    bookArr3 = [{
+        image: "https://static.semrush.com/ebooks/uploads/5e/d2/5ed2471108cd29024f3e6e9e9fb02579.png/resize/360x510/",
+        name: "Digital Real Estate: Winning the Indian Market with Data",
+        author: "Visakdatta",
+        price: 500,
+        UID: 37,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/cc/e7/cce72ce745a81ecd96e216b9e5f62a6e.png/resize/360x510/",
-        name:"Practical Guide to Data-Driven Content Marketing",
-        author:"Kalhana",
-        price:100,
-        UID:38,
+        image: "https://static.semrush.com/ebooks/uploads/cc/e7/cce72ce745a81ecd96e216b9e5f62a6e.png/resize/360x510/",
+        name: "Practical Guide to Data-Driven Content Marketing",
+        author: "Kalhana",
+        price: 100,
+        UID: 38,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/ae/7e/ae7ed3d26b531a0feb6cbf2fcdd5a92c.png/resize/360x510/",
-        name:"The Ultimate Guide for Social Media Professionals by SEMrush",
-        author:"Somdeva",
-        price:1000,
-        UID:39,
+        image: "https://static.semrush.com/ebooks/uploads/ae/7e/ae7ed3d26b531a0feb6cbf2fcdd5a92c.png/resize/360x510/",
+        name: "The Ultimate Guide for Social Media Professionals by SEMrush",
+        author: "Somdeva",
+        price: 1000,
+        UID: 39,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/37/ef/37ef3ce96dc8dbd6f8f347cc70ab9c5d.png/resize/360x510/",
-        name:"SEMrush Fintech Study",
-        author:"Vatsayana",
-        price:1500,
-        UID:40,
+        image: "https://static.semrush.com/ebooks/uploads/37/ef/37ef3ce96dc8dbd6f8f347cc70ab9c5d.png/resize/360x510/",
+        name: "SEMrush Fintech Study",
+        author: "Vatsayana",
+        price: 1500,
+        UID: 40,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/20/f2/20f2984d4e887e31f22c854ff59ced78.png/resize/360x510/",
-        name:"The Key to Content Success: SEMrush & CMI Joint Research",
-        author:"Amarshmha",
-        price:150,
-        UID:41,
+        image: "https://static.semrush.com/ebooks/uploads/20/f2/20f2984d4e887e31f22c854ff59ced78.png/resize/360x510/",
+        name: "The Key to Content Success: SEMrush & CMI Joint Research",
+        author: "Amarshmha",
+        price: 150,
+        UID: 41,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/34/d6/34d6cb05f3cc478d2bfc88a557965b3f.png/resize/360x510/",
-        name:"The Ultimate Guide for Content Marketers by SEMrush",
-        author:"Kamandaka",
-        price:280,
-        UID:42,
+        image: "https://static.semrush.com/ebooks/uploads/34/d6/34d6cb05f3cc478d2bfc88a557965b3f.png/resize/360x510/",
+        name: "The Ultimate Guide for Content Marketers by SEMrush",
+        author: "Kamandaka",
+        price: 280,
+        UID: 42,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/f7/8f/f78fae726cf0690d1a6300657a0ea44f.png/resize/360x510/",
-        name:"Top Required PPC Skills and Platforms",
-        author:"Kamandaka",
-        price:999,
-        UID:43,
+        image: "https://static.semrush.com/ebooks/uploads/f7/8f/f78fae726cf0690d1a6300657a0ea44f.png/resize/360x510/",
+        name: "Top Required PPC Skills and Platforms",
+        author: "Kamandaka",
+        price: 999,
+        UID: 43,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/b9/55/b955c1fe0646de50c480332f7fab527c.jpg/resize/360x510/",
-        name:"The Smart Marketer's Guide To Digital Diwali Campaigns",
-        author:"Amarshmha",
-        price:1589,
-        UID:44,
+        image: "https://static.semrush.com/ebooks/uploads/b9/55/b955c1fe0646de50c480332f7fab527c.jpg/resize/360x510/",
+        name: "The Smart Marketer's Guide To Digital Diwali Campaigns",
+        author: "Amarshmha",
+        price: 1589,
+        UID: 44,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/06/34/06347ac91ccf086f1795feda8c0557cb.png/resize/360x510/",
-        name:"SEMrush Annual E-commerce study",
-        author:"Vatsayana",
-        price:2000,
-        UID:45,
+        image: "https://static.semrush.com/ebooks/uploads/06/34/06347ac91ccf086f1795feda8c0557cb.png/resize/360x510/",
+        name: "SEMrush Annual E-commerce study",
+        author: "Vatsayana",
+        price: 2000,
+        UID: 45,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/24/82/2482010a400aa5cf1b0fda835b11eb78.jpg/resize/360x510/",
-        name:"Local SEO Checklist by Tim Capper",
-        author:"Somdeva",
-        price:2500,
-        UID:46,
+        image: "https://static.semrush.com/ebooks/uploads/24/82/2482010a400aa5cf1b0fda835b11eb78.jpg/resize/360x510/",
+        name: "Local SEO Checklist by Tim Capper",
+        author: "Somdeva",
+        price: 2500,
+        UID: 46,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/f9/5b/f95b4e60574cca4af6e4dfc7925ea980.png/resize/360x510/",
-        name:"Building Online Brand Awareness with Digital PR",
-        author:"Kalhana",
-        price:3000,
-        UID:47,
+        image: "https://static.semrush.com/ebooks/uploads/f9/5b/f95b4e60574cca4af6e4dfc7925ea980.png/resize/360x510/",
+        name: "Building Online Brand Awareness with Digital PR",
+        author: "Kalhana",
+        price: 3000,
+        UID: 47,
     },
     {
-        image:"https://static.semrush.com/ebooks/uploads/1a/b3/1ab3c8d867eac6d9f932eb2e918bd899.png/resize/360x510/",
-        name:"How to Build a Perfect Backlink Profile for the U.S. Real Estate, Law and Accounting Firms",
-        author:"Visakdatta",
-        price:1200,
-        UID:48,
+        image: "https://static.semrush.com/ebooks/uploads/1a/b3/1ab3c8d867eac6d9f932eb2e918bd899.png/resize/360x510/",
+        name: "How to Build a Perfect Backlink Profile for the U.S. Real Estate, Law and Accounting Firms",
+        author: "Visakdatta",
+        price: 1200,
+        UID: 48,
     },
     ]
-    localStorage.setItem("BookInfo3",JSON.stringify(bookArr3));
+    localStorage.setItem("BookInfo3", JSON.stringify(bookArr3));
 </script>
 
 <script>
-    let BookInfo3LS=JSON.parse(localStorage.getItem("BookInfo3")) || []
+    let BookInfo3LS = JSON.parse(localStorage.getItem("BookInfo3")) || []
     // console.log(BookInfo3LS)
 
-    let container=document.querySelector(".container")
+    let container = document.querySelector(".container")
 
-    let filter=document.getElementById("filter")
+    let filter = document.getElementById("filter")
 
-    let sortName=document.getElementById("sortName")
+    let sortName = document.getElementById("sortName")
 
-    let sortPrice=document.getElementById("sortPrice")
+    let sortPrice = document.getElementById("sortPrice")
 
 
 
-function displayTable(data) {
-  container.innerHTML=null;
-  data.forEach(function (elem) {
-    let div = document.createElement("div");
+    function displayTable(data) {
+        container.innerHTML = null;
+        data.forEach(function (elem) {
+            let div = document.createElement("div");
 
-    let image = document.createElement("img");
-    image.setAttribute("src", elem.image);
-    // image.addEventListener("click",function(){
-    //     window.location.href="page1_inside.html"
-    // })
+            let image = document.createElement("img");
+            image.setAttribute("src", elem.image);
+            // image.addEventListener("click",function(){
+            //     window.location.href="page1_inside.html"
+            // })
 
-    let bookName = document.createElement("h3");
-    bookName.innerText = elem.name;
-    bookName.addEventListener("click",function(){
-        // console.log(typeof(elem.name))
-        // window.location.href="page1_inside.html"
-        openPage(elem)
+            let bookName = document.createElement("h3");
+            bookName.innerText = elem.name;
+            bookName.addEventListener("click", function () {
+                // console.log(typeof(elem.name))
+                // window.location.href="page1_inside.html"
+                openPage(elem)
+            })
+
+            let author = document.createElement("h4");
+            author.innerText = elem.author;
+
+            let price = document.createElement("p");
+            price.innerText = "price:" + " " + elem.price;
+
+            div.append(image, bookName, author, price);
+            container.append(div);
+        });
+    }
+    displayTable(BookInfo3LS);
+
+
+
+    sortName.addEventListener("change", function () {
+        if (sortName.value === "") {
+            //   console.log(sortName.value)
+            displayTable(BookInfo3LS);
+        }
+        else if (sortName.value === "Ascending") {
+            BookInfo3LS.sort(function (a, b) {
+                let x = a.name;
+                let y = b.name;
+                if (x > y) return 1;
+                if (x < y) return -1;
+                else return 0;
+            });
+            // console.log(BookInfo3LS)
+            displayTable(BookInfo3LS);
+        }
+        else if (sortName.value === "Decending") {
+            BookInfo3LS.sort(function (a, b) {
+                let x = a.name;
+                let y = b.name;
+                if (x > y) return -1;
+                if (x < y) return 1;
+                else return 0;
+            });
+            displayTable(BookInfo3LS);
+        }
     })
 
-    let author = document.createElement("h4");
-    author.innerText = elem.author;
 
-    let price = document.createElement("p");
-    price.innerText = "price:"+" "+elem.price;
+    sortPrice.addEventListener("change", function () {
+        if (sortPrice.value === "") {
+            displayTable(BookInfo3LS);
+        }
+        else if (sortPrice.value === "Ascending") {
+            BookInfo3LS.sort(function (a, b) {
+                // console.log(a.price)
+                if (a.price > b.price) return 1;
+                if (a.price < b.price) return -1;
+                else return 0;
+                // displayTable(BookInfo3LS);
+            });
+            // console.log(BookInfo3LS)
+            displayTable(BookInfo3LS);
+        }
+        else if (sortPrice.value === "Decending") {
+            BookInfo3LS.sort(function (a, b) {
+                if (a.price > b.price) return -1;
+                if (a.price < b.price) return 1;
+                else return 0;
+                // displayTable(BookInfo3LS);
+            });
+            displayTable(BookInfo3LS);
+        }
+    })
 
-    div.append(image, bookName, author, price);
-    container.append(div);
-  });
-}
-displayTable(BookInfo3LS);
+    filter.addEventListener("change", function () {
+        if (filter.value === "") {
+            displayTable(BookInfo3LS);
+        }
+        else {
+            let authorArr = BookInfo3LS.filter(function (ele) {
+                return ele.author === filter.value;
 
-
-
-sortName.addEventListener("change",function(){
-    if(sortName.value==="")
-    {
-    //   console.log(sortName.value)
-      displayTable(BookInfo3LS);
-    }
-    else if (sortName.value === "Ascending") {
-    BookInfo3LS.sort(function (a, b) {
-      let x = a.name;
-      let y = b.name;
-      if (x > y) return 1;
-      if (x < y) return -1;
-      else return 0;
-    });
-    // console.log(BookInfo3LS)
-    displayTable(BookInfo3LS);
-  }
-  else if (sortName.value === "Decending") {
-    BookInfo3LS.sort(function (a, b) {
-      let x = a.name;
-      let y = b.name;
-      if (x > y) return -1;
-      if (x < y) return 1;
-      else return 0;
-    });
-    displayTable(BookInfo3LS);
-  }
-  })
-
-
-  sortPrice.addEventListener("change",function(){
-    if(sortPrice.value==="")
-    {
-        displayTable(BookInfo3LS);
-    }
-    else if (sortPrice.value === "Ascending") {
-        BookInfo3LS.sort(function (a, b) {
-      // console.log(a.price)
-      if (a.price > b.price) return 1;
-      if (a.price < b.price) return -1;
-      else return 0;
-      // displayTable(BookInfo3LS);
-    });
-    // console.log(BookInfo3LS)
-    displayTable(BookInfo3LS);
-  }
-  else if (sortPrice.value === "Decending") {
-    BookInfo3LS.sort(function (a, b) {
-      if (a.price > b.price) return -1;
-      if (a.price < b.price) return 1;
-      else return 0;
-      // displayTable(BookInfo3LS);
-    });
-    displayTable(BookInfo3LS);
-  }
-  })
-
-  filter.addEventListener("change",function(){
-      if(filter.value===""){
-        displayTable(BookInfo3LS);
-      }
-      else{
-          let authorArr=BookInfo3LS.filter(function(ele){
-          return ele.author===filter.value;
-          
-      })
-      displayTable(authorArr);
-      }
-  })
-  function openPage(elem){
-    if (elem.UID == 37) {
+            })
+            displayTable(authorArr);
+        }
+    })
+    function openPage(elem) {
+        if (elem.UID == 37) {
             window.location.href = "page4_B1.html";
         }
         else if (elem.UID == 38) {
@@ -578,92 +691,92 @@ sortName.addEventListener("change",function(){
         else if (elem.UID == 48) {
             window.location.href = "page4_B12.html";
         }
-  }
+    }
 </script>
 
 <script>
-    let btn=document.getElementById("page")
+    let btn = document.getElementById("page")
 
     let div = document.createElement("div");
 
-    let page1=document.createElement("button");
-    page1.innerText="1"
-    page1.addEventListener("click",function(){
-        window.location.href="content.html"
+    let page1 = document.createElement("button");
+    page1.innerText = "1"
+    page1.addEventListener("click", function () {
+        window.location.href = "content.html"
     })
 
-    let page2=document.createElement("button");
-    page2.innerText="2"
-    page2.addEventListener("click",function(){
-        window.location.href="ebookP2.html"
+    let page2 = document.createElement("button");
+    page2.innerText = "2"
+    page2.addEventListener("click", function () {
+        window.location.href = "ebookP2.html"
     })
 
-    let page3=document.createElement("button");
-    page3.innerText="3"
-    page3.addEventListener("click",function(){
-        window.location.href="ebookP3.html"
+    let page3 = document.createElement("button");
+    page3.innerText = "3"
+    page3.addEventListener("click", function () {
+        window.location.href = "ebookP3.html"
     })
 
-    let page4=document.createElement("button");
-    page4.innerText="4"
+    let page4 = document.createElement("button");
+    page4.innerText = "4"
 
-    let page5=document.createElement("button");
-    page5.innerText="5"
-    page5.addEventListener("click",function(){
-        window.location.href="ebookP5.html"
+    let page5 = document.createElement("button");
+    page5.innerText = "5"
+    page5.addEventListener("click", function () {
+        window.location.href = "ebookP5.html"
     })
 
-    div.append(page1,page2,page3,page4,page5)
+    div.append(page1, page2, page3, page4, page5)
     btn.append(div)
 </script>
 
 <script>
-    let foot=document.getElementById("end")
+    let foot = document.getElementById("end")
 
-    let heading=document.createElement("h3");
-    heading.innerText="SEMRUSH"
+    let heading = document.createElement("h3");
+    heading.innerText = "SEMRUSH"
 
-    let para=document.createElement("p");
-    para.innerText="© 2008 - 2022 Semrush. All rights reserved."
+    let para = document.createElement("p");
+    para.innerText = "© 2008 - 2022 Semrush. All rights reserved."
 
-    foot.append(heading,para)
+    foot.append(heading, para)
 </script>
 
 <script>
-    let nav=document.getElementById("nav");
-    
+    let nav = document.getElementById("nav");
+
     function displaynav() {
 
-    let div = document.createElement("div");
+        let div = document.createElement("div");
 
-    let heading=document.createElement("h3");
-    heading.innerText="SEMRUSH"
+        let heading = document.createElement("h3");
+        heading.innerText = "SEMRUSH"
 
-    let heading1=document.createElement("h3");
-    heading1.innerText="Community:"
+        let heading1 = document.createElement("h3");
+        heading1.innerText = "Community:"
 
-    let heading2=document.createElement("h4");
-    heading2.innerText="Blog"
+        let heading2 = document.createElement("h4");
+        heading2.innerText = "Blog"
 
-    let heading3=document.createElement("h4");
-    heading3.innerText="Webinars"
+        let heading3 = document.createElement("h4");
+        heading3.innerText = "Webinars"
 
-    let heading4=document.createElement("h4");
-    heading4.innerText="Podcast"
+        let heading4 = document.createElement("h4");
+        heading4.innerText = "Podcast"
 
-    let heading5=document.createElement("h4");
-    heading5.innerText="Ebooks"
+        let heading5 = document.createElement("h4");
+        heading5.innerText = "Ebooks"
 
-    let heading6=document.createElement("h4");
-    heading6.innerText="Events"
+        let heading6 = document.createElement("h4");
+        heading6.innerText = "Events"
 
-    let loginBtn=document.createElement("button");
-    loginBtn.innerText="Login"
+        let loginBtn = document.createElement("button");
+        loginBtn.innerText = "Login"
 
 
-    div.append(heading,heading1,heading2,heading3,heading4,heading5,heading6,loginBtn);
-    nav.append(div);
-}
-displaynav();
+        div.append(heading, heading1, heading2, heading3, heading4, heading5, heading6, loginBtn);
+        nav.append(div);
+    }
+    displaynav();
 
 </script>
