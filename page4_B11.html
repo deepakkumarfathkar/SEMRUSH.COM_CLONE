@@ -1,0 +1,1022 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book 1</title>
+    <style>
+      #below_nav {
+        /* border: 1px solid green; */
+        padding-bottom: 80px;
+        padding-top: 80px;
+        background-color: rgb(95, 44, 84);
+      }
+      #below_nav_info {
+        width: 70%;
+        margin: auto;
+        /* border: 1px solid black; */
+      }
+      #image_pic {
+        display: flex;
+        justify-content: center;
+        /* border: 1px solid red; */
+        margin-top: 10px;
+        height: 300px;
+      }
+      #image_pic h3,
+      p,
+      button {
+        margin-left: 50px;
+      }
+      #image_pic h3 {
+        font-size: 40px;
+        margin-top: 60px;
+        width: 500px;
+        color: whitesmoke;
+      }
+      #image_pic p {
+        margin-top: -20px;
+        margin-bottom: 40px;
+        color: whitesmoke;
+      }
+      #image_pic button {
+        padding: 15px 25px;
+        border-radius: 10px;
+      }
+      p + button {
+        background-color: whitesmoke;
+        border: none;
+      }
+      button + button {
+        background-color: rgb(95, 44, 84);
+        color: whitesmoke;
+        border: 1px solid whitesmoke;
+      }
+
+      #lbtn {
+        background-color: rgb(95, 44, 84);
+        color: whitesmoke;
+        border: 1px solid whitesmoke;
+        padding: 5px 15px;
+        margin-left: 5px;
+      }
+      #lbtn:hover,.hvr:hover{
+        background-color: hsla(0,0%,100%,.05);
+        cursor: pointer;
+      }
+      .hvr1:hover{
+        cursor: pointer;
+        background-color: rgb(243, 234, 234);
+      }
+      #midContent{
+        width: 66%;
+        margin: auto;
+        line-height: 20px;
+        font-size: larger;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+      #midContent>p{
+        margin-bottom: 25px;
+      }
+      #midContent li{
+        margin-left: 50px;
+        margin-bottom: 20px;
+      }
+      hr{
+        width: 10%;
+      }
+
+    /* form css */
+
+    .testbox div{
+    padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+    }
+    .testbox p{
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+    }
+    #page-form, input, select{ 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      .banner h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      z-index: 2;
+      }
+      .banner p{
+        margin-top: 90px;
+        color: wheat;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      width: 45%;
+        margin: auto;
+        margin-top: 50px;
+      }
+      #page-form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0 #095484; 
+      }
+      .banner {
+      position: relative;
+      height: 210px;
+      background-color: rgb(95, 44, 84);;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.4); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder, a {
+      color: #095484;
+      }
+      .item input:hover, .item select:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      color: #095484;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .question{
+        margin: auto;
+        text-align: center;
+      }
+      .question>p{
+        margin-left: -5px;
+      }
+      input[type=checkbox]  {
+      display: none;
+      }
+      label.check {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 10px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      span.required {
+      margin-left: 0;
+      color: red;
+      }
+      label.check:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+      border: 1px solid #095484;
+      }
+      input[type=checkbox]:checked + .check:before {
+      background: #095484;
+      }
+      label.check:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 4px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #fff;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+       margin: auto;
+      margin-top: 10px;
+      text-align: center;
+      margin-left: -46px;
+      }
+      .btn-block button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+
+      #afHeader{
+        margin-top: 100px;
+        text-align: center;
+        padding: 50px 0px 100px 0px;
+        background-color: #f5f5f5;
+        font-size: 20px;
+        /* border: 1px solid black ; */
+      }
+
+      #aboveFooter{
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        text-align: center;
+        /* border: 1px solid red; */
+      }
+      #aboveFooter>div{
+        width: 60%;
+        margin: auto;
+        padding: 0px 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-color: white;
+        cursor: pointer;
+        /* border: 1px solid green; */
+      }
+      #aboveFooter>div:hover{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      #aboveFooter>div>p{
+        margin-left: auto;
+      }
+      #aboveFooter div:first-child{
+        margin-right: -50px;
+      }
+      #aboveFooter div:last-child{
+        margin-left: -50px;
+      }
+      .btn-block button:hover {
+      background: #0666a3;
+      }
+
+      /* navbar */
+      #nav{
+            width: 100%;
+            background-color: #111317;
+            color: whitesmoke;
+        }
+      #nav>div{
+            width: 70%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-around; */
+        }
+        #nav>div>h3,h4{
+            margin-left: 30px;
+        }
+        #nav>div>h3:nth-child(2)
+        {
+            color: gray;
+        }
+        #nav>div>h4{
+            color: grey;
+            cursor: pointer;
+        }
+        #nav>div>h4:hover{
+            color: whitesmoke;
+        }
+        #nav>div>h4:nth-child(6){
+            color: whitesmoke;
+        }
+        #nav>div>button{
+            background-color: #111317;
+            color: whitesmoke;
+            border: solid whitesmoke;
+            padding: 10px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+        /* footer */
+        #footer_main {
+            display: flex;
+            margin-top: auto;
+            background-color: #111317;
+            color: white;
+            flex-flow: row wrap;
+            padding-bottom: 15px;
+            padding-top: 40px;
+
+        }
+
+        
+        #footer {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            margin: auto;
+            gap: 185px;
+        }
+
+        ul {
+            line-height: 25px;
+            list-style: none;
+            /* list-style; */
+        }
+
+        .col1 {
+            max-width: 160px;
+            text-align: center;
+        }
+
+        .head {
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .list1 {
+            padding: inherit;
+            font-size: 14px;
+            color: gray;
+        }
+
+        li:hover {
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        /* end */
+        #end{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            gap: 20px;
+            text-align: center;
+            background-color: #000;
+            color: whitesmoke;
+        }
+        #end>p{
+            margin-top: 20px;
+            color: gray;
+        }
+
+        /* form style */
+
+        .center * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .show-btn {
+            background-color: #111317;
+            border: 1px solid whitesmoke;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #3498db;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .show-btn {
+            float: right;
+            margin: 10px 150px 10px 0px
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .container1 {
+            display: none;
+            background: #fff;
+            width: 410px;
+            padding: 30px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #show:checked~.container1 {
+            display: block;
+        }
+
+        .container1 .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .container1 .close-btn:hover {
+            color: #3498db;
+        }
+
+        .container1 .text {
+            font-size: 35px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .container1 form {
+            margin-top: -20px;
+        }
+
+        .container1 form .data {
+            height: 45px;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        .container1 form .data label {
+            font-size: 18px;
+        }
+
+        .container1 form .data input {
+            height: 100%;
+            width: 100%;
+            padding-left: 10px;
+            font-size: 17px;
+            border: 1px solid silver;
+        }
+
+        .container1 form .data input:focus {
+            border-color: #3498db;
+            border-bottom-width: 2px;
+        }
+
+        .container1 form .forgot-pass {
+            margin-top: -8px;
+        }
+
+        .container1 form .forgot-pass a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .container1 form .forgot-pass a:hover {
+            text-decoration: underline;
+        }
+
+        .container1 form .btn {
+            margin: 30px 0;
+            height: 45px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container1 form .btn .inner {
+            height: 100%;
+            width: 300%;
+            position: absolute;
+            left: -100%;
+            z-index: -1;
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+            transition: all 0.4s;
+        }
+
+        .container1 form .btn:hover .inner {
+            left: 0;
+        }
+
+        .container1 form .btn button {
+            height: 100%;
+            width: 100%;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .container1 form .signup-link {
+            text-align: center;
+        }
+
+        .container1 form .signup-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .container1 form .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* media files */
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+      @media all and (min-width: 671px) and (max-width: 869px) {
+        #aboveFooter {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        #footer{
+            gap: 50px;
+        }
+        #nav>div{
+                width: 100%;
+                font-size: 12px;
+            }
+            .show-btn {
+            float: right;
+            margin: 8px 30px 8px 250px;
+            padding: 8px 8px;
+            font-size: 12px;
+        }
+      }
+
+      @media all and (min-width: 671px) and (max-width: 950px){
+        #aboveFooter {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        #footer {
+                gap: 50px;
+            }
+
+            #nav>div{
+                width: 80%;
+                font-size: 12px;
+            }
+            .show-btn {
+            float: right;
+            margin: 8px 30px 8px 20px;
+            padding: 8px 8px;
+            font-size: 12px;
+        }
+    }
+    @media all and (min-width: 320px) and (max-width: 670px) {
+      #aboveFooter {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+            #footer {
+                gap: 5px;
+            }
+            #nav>div{
+                width: 20%;
+                font-size: 6px;
+                margin-left: -10px;
+            }
+            #nav>div>h3,
+        h4 {
+            margin-left: 12px;
+        }
+            .show-btn {
+            float: right;
+            margin: 3px 15px 4px 209px;
+            padding: 4px 4px;
+            font-size: 6px;
+        }
+        }
+    </style>
+  </head>
+  <body>
+    <!-- popup form -->
+
+    <div class="center">
+      <input type="checkbox" id="show">
+      <label for="show" class="show-btn">Login</label>
+      <div class="container1">
+          <label for="show" class="close-btn" title="close">close</label>
+          <div class="text">
+              Login Form
+          </div>
+          <form>
+              <div class="data">
+                  <label>Email or Phone</label>
+                  <input id="email" type="text" required>
+              </div>
+              <div class="data">
+                  <label>Password</label>
+                  <input id="password" type="password" required>
+              </div>
+              <div class="forgot-pass">
+                  <a href="#">Forgot Password?</a>
+              </div>
+              <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit">login</button>
+              </div>
+              <div class="signup-link">
+                  Not a member? <a href="#">Signup now</a>
+              </div>
+          </form>
+      </div>
+  </div>
+  <!-- nav -->
+    <div id="nav">
+    </div>
+    <div id="below_nav">
+      <div id="below_nav_info"></div>
+    </div>
+    <div id="midContent">
+      <p>
+        Regular site audits are an integral part of maintaining a healthy
+        website. However, a comprehensive site audit (particularly on a large
+        website) isn’t easy. Every technical aspect of a site requires
+        meticulous attention, creating a huge list of potential problems.
+      </p>
+
+      <p>
+        Frequently, the same mistakes and issues raise their heads time and time
+        again. That’s why we analyzed 100,000 sites and 450 million pages to
+        uncover the most common technical SEO issues found on websites.
+      </p>
+
+      <p>
+        Our Ultimate Site Audit with Semrush ebook explains how you can identify
+        and then fix common technical SEO issues. It also offers guidance on
+        auditing all sections of a site.
+      </p>
+
+      <p>Within this Site Audit ebook you’ll find advice on:</p>
+
+      <ul>
+        <li>
+          <strong>Crawlability and site architecture:</strong> Robots.txt, URL
+          structures, redirects, sitemaps
+        </li>
+        <li>
+          <strong>On-page SEO:</strong> Content, title tags, H1s, meta
+          descriptions, images
+        </li>
+        <li>
+          <strong>Technical SEO:</strong> Page speed, old technology, mobile
+        </li>
+        <li>
+          <strong>HTTPS Implementation:</strong> Switching from HTTP to HTTPS
+        </li>
+        <li>
+          <strong>International SEO: </strong>Configuring a multilingual site,
+          avoiding duplicates and redirects
+        </li>
+      </ul>
+
+      <p>
+        Download this free guide today to cover all your bases when you perform
+        your next site audit.
+      </p>
+
+      <p><strong>Estimated Reading Time:</strong> 20 minutes</p>
+
+      <p>
+        <strong>Target Audience: </strong>This guide is built for mid-level SEOs
+        at agencies or in-house who are regularly required to perform site
+        audits.
+      </p>
+
+      <p><em>This ebook was updated on June 9, 2022. </em></p>
+    </div>
+    <hr>
+    <div class="testbox">
+        <form id="page-form">
+            <div class="banner">
+                <h1>Download your PDF</h1>
+                <p>By downloading this file, you agree to receive our newsletter. You can unsubscribe at any time.</p>
+            </div>
+            <h2>Applicant Details</h2>
+            <div class="item">
+                <p>Name</p>
+                <div class="name-item">
+                    <input type="text" name="name" placeholder="First" />
+                    <input type="text" name="name" placeholder="Last" />
+                </div>
+            </div>
+            <div class="item">
+                <p>Email</p>
+                <input type="text" name="name" />
+            </div>
+            <div class="item">
+                <p>Phone</p>
+                <input type="text" name="name" />
+            </div>
+    
+            <div class="item">
+                <p>Company name</p>
+                <input type="text" name="name" />
+            </div>
+            <div class="item">
+    
+                <select>
+                    <option value="">Country</option>
+                    <option value="1">Russia</option>
+                    <option value="2">Germany</option>
+                    <option value="3">France</option>
+                    <option value="4">Armenia</option>
+                    <option value="5">USA</option>
+                </select>
+            </div>
+    </div>
+    
+    <div class="question">
+        <p>Privacy Policy<span class="required">*</span></p>
+        <div class="question-answer checkbox-item">
+            <div>
+                <input type="checkbox" value="none" id="check_1" name="check" required />
+                <label for="check_1" class="check"><span>I agree to the <a
+                            href="https://www.w3docs.com/privacy-policy">privacy policy.</a></span></label>
+            </div>
+        </div>
+    </div>
+    <div class="btn-block">
+        <button type="submit" href="/">Download PDF</button>
+    </div>
+    </form>
+
+    <div id="afHeader">
+        <h1>More on this</h1>
+        <div id="aboveFooter">
+
+        </div>
+    </div>
+    <div id="footer_main">
+        <div id="footer">
+            <div class="col1">
+                <div class="head">SEMRUSH</div>
+            <ul class="list1">
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Success stories</li>
+                <li>Stats and Facts</li>
+                <li>Data Studies</li>
+                <li>News</li>
+                <li>Custom Report</li>
+            </ul>
+            </div>
+            
+            <div class="col1">
+                <div class="head">Community</div>
+            <ul class="list1">
+                <li>Knowledge Base</li>
+                <li>Academy</li>
+                <li>Semrush API</li>
+                <li>Semrush Blog</li>
+                <li>Webinars</li>
+                <li>Events</li>
+                <li>Podcast</li>
+                <li>Ebooks</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">MORE TOOLS</div>
+            <ul class="list1">
+                <li>Analytics Reports</li>
+                <li>Projects</li>
+                <li>Marketplace</li>
+                <li>Traffic Jet</li>
+                <li>Agency Partners</li>
+                <li>Affiliate Program</li>
+                <li>SEOquake</li>
+                <li>Sensor</li>
+                <li>Amazon Tools</li>
+                <li>Prowly</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">COMPANY</div>
+            <ul class="list1">
+                <li>About Us</li>
+                <li>Partners</li>
+                <li>Legal Info</li>
+                <li>Security Info</li>
+                <li>Contact Us</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">FOLLOW US</div>
+            <ul class="list1">
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>LinkedIn</li>
+                <li>Instagram</li>
+                <li>Pinterest</li>
+            </ul>
+            </div>
+
+            <div class="col1">
+                <div class="head">Language</div>
+            <ul class="list1">
+                <li>English</li>
+                <li>Español</li>
+                <li>Deutsch</li>
+                <li>Français</li>
+                <li>Italiano</li>
+                <li>Português (Brasil)</li>
+                <li>中文</li>
+                <li>日本語</li>
+                <li>한국어</li>
+                <li>Tiếng Việt</li>
+            </ul>
+            </div>
+    
+        </div>
+    </div>
+    <div id="end"></div>
+
+  </body>
+</html>
+<script>
+  let below_nav = document.getElementById("below_nav");
+
+  let below_nav_info = document.getElementById("below_nav_info");
+
+  let aboveFooter = document.getElementById("aboveFooter");
+
+  function displayTable() {
+    let div = document.createElement("div");
+
+    let div1 = document.createElement("div");
+    div1.id = "image_pic";
+
+    let div2 = document.createElement("div");
+    div2.id = "image_btn";
+
+    let loginBtn = document.createElement("button");
+    loginBtn.id = "lbtn";
+    loginBtn.innerText = "<-- Go To Ebooks";
+    loginBtn.addEventListener("click",function(){
+        window.location.href="content.html"
+    })
+
+    let image = document.createElement("img");
+    image.setAttribute(
+      "src",
+      "https://static.semrush.com/ebooks/uploads/f9/5b/f95b4e60574cca4af6e4dfc7925ea980.png/resize/354x500/"
+    );
+
+    let bookName = document.createElement("h3");
+    bookName.innerText = "The Ultimate Site Audit with Semrush";
+    // console.log(bookName.innerText)
+
+    let bookInfo = document.createElement("p");
+    bookInfo.innerText = "Jun 09, 2022";
+
+    let btn1 = document.createElement("button");
+    btn1.innerText = "Download";
+    btn1.className="hvr1";
+
+    let btn2 = document.createElement("button");
+    btn2.innerText = "View Simple";
+    btn2.className="hvr";
+
+    div.append(loginBtn);
+    div1.append(image, div2);
+    // div2.append(image)
+    div2.append(bookName, bookInfo, btn1, btn2);
+    // div3.append(bookInfo)
+    // div4.append(btn1,btn2)
+    below_nav_info.append(div, div1);
+    below_nav.append(below_nav_info);
+  }
+  displayTable();
+
+  function display(){
+    let div = document.createElement("div");
+    let div1 = document.createElement("div");
+    let div2 = document.createElement("div");
+
+    // let head=document.createElement("h1")
+    // head.innerText="More on this"
+
+    let p=document.createElement("p")
+    p.innerText="July 10, 2019";
+    let h=document.createElement("h1")
+    h.innerText="How To Untangle the Website Architecture of a Site with 500,000+ Pages"
+    let p11=document.createElement("p")
+    p11.innerText="Nick Brown"
+
+    let p2=document.createElement("p")
+    p2.innerText="July 10, 2019"
+    let h1=document.createElement("h1")
+    h1.innerText="How To Untangle the Website Architecture of a Site with 500,000+ Pages"
+    let p12=document.createElement("p")
+    p12.innerText="Nick Brown"
+
+    let p3=document.createElement("p")
+    p3.innerText="July 10, 2019"
+    let h2=document.createElement("h1")
+    h2.innerText="How To Untangle the Website Architecture of a Site with 500,000+ Pages"
+    let p13=document.createElement("p")
+    p13.innerText="Nick Brown"
+
+    div.append(p,h,p11)
+    div1.append(p2,h1,p12)
+    div2.append(p3,h2,p13)
+    aboveFooter.append(div,div1,div2)
+  }
+  display()
+</script>
+<script>
+    let nav=document.getElementById("nav");
+    
+    function displaynav() {
+
+    let div = document.createElement("div");
+
+    let heading=document.createElement("h3");
+    heading.innerText="SEMRUSH"
+
+    let heading1=document.createElement("h3");
+    heading1.innerText="Community:"
+
+    let heading2=document.createElement("h4");
+    heading2.innerText="Blog"
+
+    let heading3=document.createElement("h4");
+    heading3.innerText="Webinars"
+
+    let heading4=document.createElement("h4");
+    heading4.innerText="Podcast"
+
+    let heading5=document.createElement("h4");
+    heading5.innerText="Ebooks"
+
+    let heading6=document.createElement("h4");
+    heading6.innerText="Events"
+
+
+
+    div.append(heading,heading1,heading2,heading3,heading4,heading5,heading6);
+    nav.append(div);
+}
+displaynav();
+
+</script>
+<script>
+    let foot=document.getElementById("end")
+
+    let heading=document.createElement("h3");
+    heading.innerText="SEMRUSH"
+
+    let para=document.createElement("p");
+    para.innerText="© 2008 - 2022 Semrush. All rights reserved."
+
+    foot.append(heading,para)
+</script>
