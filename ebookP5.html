@@ -342,14 +342,14 @@
         name:"Online Marketing for a Small Business: SEMrush Solutions",
         author:"Visakdatta",
         price:500,
-        UID:33,
+        UID:49,
     },
     {
         image:"https://static.semrush.com/ebooks/uploads/e4/b0/e4b01aa10d69dda96e37bf9d20a55fcd.png/resize/360x510/",
         name:"The Ultimate Guide to Twitter Chats by SEMrush",
         author:"Kalhana",
         price:100,
-        UID:34,
+        UID:50,
     },
     ]
     localStorage.setItem("BookInfo4",JSON.stringify(bookArr4));
@@ -472,12 +472,13 @@ sortName.addEventListener("change",function(){
       }
   })
   function openPage(elem){
-        if(elem.UID==1)
+        if(elem.UID==49)
         {
-            window.location.href="page1_inside.html";
+            window.location.href="page5_B1.html";
         }
-        else{
-            alert("done")
+        else if(elem.UID==50)
+        {
+            window.location.href="page5_B2.html";
         }
   }
 </script>
