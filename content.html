@@ -7,7 +7,7 @@
     <title>Ebooks</title>
     <style>
         #up_content {
-            border: 1px solid green;
+            /* border: 1px solid green; */
             text-align: center;
             background-color: #0071c5;
             color: white;
@@ -82,6 +82,8 @@
             color: #0071c5;
         }
 
+        /* footer */
+
         #footer_main {
             display: flex;
             margin-top: auto;
@@ -93,7 +95,7 @@
 
         }
 
-        /* footer */
+
         #footer {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -129,6 +131,7 @@
             color: whitesmoke;
             cursor: pointer;
         }
+        /* footer end */
 
         #page {
             display: flex;
@@ -376,6 +379,27 @@
             color: whitesmoke;
         }
 
+        @media all and (min-width: 1000px) and (max-width: 1330px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            #footer {
+                gap: 85px;
+            }
+
+            #nav>div {
+                width: 80%;
+                font-size: 12px;
+            }
+
+            .show-btn {
+                float: right;
+                margin: 8px 30px 8px 20px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
+        }
 
         @media all and (min-width: 671px) and (max-width: 869px) {
             .container {
@@ -386,18 +410,20 @@
                 gap: 50px;
             }
 
-            #nav>div{
+            #nav>div {
                 width: 100%;
                 font-size: 12px;
             }
+
             .show-btn {
-            float: right;
-            margin: 8px 30px 8px 250px;
-            padding: 8px 8px;
-            font-size: 12px;
+                float: right;
+                margin: 8px 30px 8px 250px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
         }
-        }
-        @media all and (min-width: 671px) and (max-width: 950px){
+
+        @media all and (min-width: 671px) and (max-width: 1000px) {
             .container {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -406,16 +432,17 @@
                 gap: 50px;
             }
 
-            #nav>div{
+            #nav>div {
                 width: 80%;
                 font-size: 12px;
             }
+
             .show-btn {
-            float: right;
-            margin: 8px 30px 8px 20px;
-            padding: 8px 8px;
-            font-size: 12px;
-        }
+                float: right;
+                margin: 8px 30px 8px 20px;
+                padding: 8px 8px;
+                font-size: 12px;
+            }
         }
 
         @media all and (min-width: 320px) and (max-width: 670px) {
@@ -426,21 +453,24 @@
             #footer {
                 gap: 5px;
             }
-            #nav>div{
+
+            #nav>div {
                 width: 20%;
                 font-size: 6px;
                 margin-left: -10px;
             }
+
             #nav>div>h3,
-        h4 {
-            margin-left: 12px;
-        }
+            h4 {
+                margin-left: 12px;
+            }
+
             .show-btn {
-            float: right;
-            margin: 3px 15px 4px 209px;
-            padding: 4px 4px;
-            font-size: 6px;
-        }
+                float: right;
+                margin: 3px 15px 4px 209px;
+                padding: 4px 4px;
+                font-size: 6px;
+            }
         }
     </style>
 </head>
@@ -473,7 +503,7 @@
                     <button type="submit">login</button>
                 </div>
                 <div class="signup-link">
-                    Not a member? <a href="#">Signup now</a>
+                    Not a member? <a href="signup.html">Signup now</a>
                 </div>
             </form>
         </div>
@@ -512,7 +542,9 @@
         </div>
         <div class="container"></div>
     </div>
+
     <div id="page"></div>
+
     <div id="footer_main">
         <div id="footer">
             <div class="col1">
@@ -811,8 +843,38 @@
         if (elem.UID == 1) {
             window.location.href = "page1_inside.html";
         }
-        else {
-            alert("done")
+        else if (elem.UID == 2) {
+            window.location.href = "page1_B2.html";
+        }
+        else if (elem.UID == 3) {
+            window.location.href = "page1_B3.html";
+        }
+        else if (elem.UID == 4) {
+            window.location.href = "page1_B4.html";
+        }
+        else if (elem.UID == 5) {
+            window.location.href = "page1_B5.html";
+        }
+        else if (elem.UID == 6) {
+            window.location.href = "page1_B6.html";
+        }
+        else if (elem.UID == 7) {
+            window.location.href = "page1_B7.html";
+        }
+        else if (elem.UID == 8) {
+            window.location.href = "page1_B8.html";
+        }
+        else if (elem.UID == 9) {
+            window.location.href = "page1_B9.html";
+        }
+        else if (elem.UID == 10) {
+            window.location.href = "page1_B10.html";
+        }
+        else if (elem.UID == 11) {
+            window.location.href = "page1_B11.html";
+        }
+        else if (elem.UID == 12) {
+            window.location.href = "page1_B12.html";
         }
     }
 </script>
@@ -880,6 +942,9 @@
 
         let heading2 = document.createElement("h4");
         heading2.innerText = "Blog"
+        heading2.addEventListener("click",function(){
+            window.location.href="blog.html"
+        })
 
         let heading3 = document.createElement("h4");
         heading3.innerText = "Webinars"
