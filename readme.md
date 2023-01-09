@@ -10,7 +10,16 @@ The best marketers enjoy and love what they do. Semrush ensures marketing profes
 ## Tech Stack
 ​
 ​
-**Client:** HTML, CSS, JavaScript
+**Client:** HTML, CSS
 ​
 ## Screenshots
 ​
+**Blog Page**
+​​
+​​
+![Screenshot (69)](https://user-images.githubusercontent.com/55477611/211347370-46b02a23-2d1a-48ee-878f-923f7b7e8301.png)
+​
+**Login** **&** **Signup**
+​​
+​​
+
