@@ -22,4 +22,15 @@ The best marketers enjoy and love what they do. Semrush ensures marketing profes
 **Login** **&** **Signup**
 ​​
 ​​
-
+![Screenshot (72)](https://user-images.githubusercontent.com/55477611/211347892-07c37937-d600-4584-a203-4adf742748ef.png)
+​​
+​​
+![Screenshot (73)](https://user-images.githubusercontent.com/55477611/211347925-f43c65f4-fdd7-469b-9a49-05ddf9fdd23d.png)
+​
+**Ebook** - **Single Ebook Page**
+​​
+​​
+![Screenshot (70)](https://user-images.githubusercontent.com/55477611/211348378-32462dbf-122f-498d-a7a7-a8d96b7f952c.png)
+​​
+​​
+![Screenshot (71)](https://user-images.githubusercontent.com/55477611/211348402-d3c2d085-bb2f-4cae-8ff0-8c941c55f4e0.png)
